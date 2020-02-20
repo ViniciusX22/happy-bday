@@ -18,6 +18,10 @@ var container, timeline;
 function setup() {
   container = document.querySelector("body");
   let claps = new Audio("claps.mp3");
+  let text = document.querySelector(".happy-bday");
+  text.innerHTML = location.href.split("#")[1]
+    ? `Parabéns<br/>${location.href.split("#")[1]}!`
+    : "Parabéns!";
   gsap.registerPlugin(CSSPlugin);
   timeline = gsap.timeline();
   timeline.pause();
