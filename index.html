@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Aniversário!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/CSSRulePlugin.js"
+      integrity="sha256-VydUelWQ7WvWJD1NWOm4lnpR59pJJbz1YjRlyQxc2EM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Sriracha&display=swap");
+
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        overflow: hidden;
+        background-color: rgb(245, 76, 76, 0.8);
+      }
+
+      .confetti {
+        position: absolute;
+      }
+
+      .happy-bday {
+        position: absolute;
+        margin: 0;
+        color: white;
+        font-size: 6em;
+        font-family: "Amatic SC", cursive;
+        text-align: center;
+        top: 30%;
+        left: 0;
+        right: 0;
+        z-index: 15;
+        text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="happy-bday">
+      Parabéns <br />
+      Rafa!
+    </h1>
+    <audio>
+      <source src="claps.mp3" type="audio/mpeg"></source>
+    </audio>
+  </body>
+</html>
