@@ -19,9 +19,13 @@ function setup() {
   container = document.querySelector("body");
   let claps = new Audio("claps.mp3");
   let text = document.querySelector(".happy-bday");
+  let title = document.querySelector("title");
   text.innerHTML = location.href.split("#")[1]
     ? `Parabéns<br/>${location.href.split("#")[1]}!`
     : "Parabéns!";
+  title.innerHTML = location.href.split("#")[1]
+    ? `Feliz Aniversário, ${capitalize(location.href.split("#")[1])}!`
+    : "Feliz Aniversário!";
   gsap.registerPlugin(CSSPlugin);
   timeline = gsap.timeline();
   timeline.pause();
@@ -82,4 +86,8 @@ function animate(conffeti, insertTime) {
     },
     insertTime
   );
+}
+
+function capitalize(str) {
+  return str[0].toUpperCase() + str.substring(1, str.length);
 }
