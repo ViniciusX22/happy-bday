@@ -14,8 +14,6 @@ var minWidth = 10,
   maxDuration = 10;
 // Global objects
 var container, timeline;
-// Helper
-var init;
 
 function setup() {
   container = document.querySelector("body");
@@ -29,12 +27,10 @@ function setup() {
     duration: 5,
     ease: "back"
   });
-  init = true;
   minDuration = 8;
   for (let i = 0; i < 40; i++) {
     createConffeti(i * minInterval);
   }
-  init = false;
   minDuration = 4;
   timeline.play();
   claps.play();

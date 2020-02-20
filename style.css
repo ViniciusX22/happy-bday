@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC|Courgette|Sriracha&display=swap");
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background-color: rgb(245, 76, 76, 0.8);
+}
+
+.confetti {
+  position: absolute;
+}
+
+.happy-bday {
+  position: absolute;
+  margin: 0;
+  color: white;
+  font-size: 6em;
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  top: 30%;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+}
