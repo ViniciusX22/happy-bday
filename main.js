@@ -21,11 +21,11 @@ function setup() {
   let text = document.querySelector(".happy-bday");
   let title = document.querySelector("title");
   text.innerHTML = location.href.split("#")[1]
-    ? `Parabéns<br/>${location.href.split("#")[1].replace("%20", " ")}!`
+    ? `Parabéns<br/>${decodeURI(location.href.split("#")[1])}!`
     : "Parabéns!";
   title.innerHTML = location.href.split("#")[1]
     ? `Feliz Aniversário, ${capitalize(
-        location.href.split("#")[1].replace("%20", " ")
+        decodeURI(location.href.split("#")[1])
       )}!`
     : "Feliz Aniversário!";
   gsap.registerPlugin(CSSPlugin);
