@@ -24,7 +24,9 @@ function setup() {
     ? `Parabéns<br/>${location.href.split("#")[1].replace("%20", " ")}!`
     : "Parabéns!";
   title.innerHTML = location.href.split("#")[1]
-    ? `Feliz Aniversário, ${capitalize(location.href.split("#")[1])}!`
+    ? `Feliz Aniversário, ${capitalize(
+        location.href.split("#")[1].replace("%20", " ")
+      )}!`
     : "Feliz Aniversário!";
   gsap.registerPlugin(CSSPlugin);
   timeline = gsap.timeline();
@@ -89,5 +91,8 @@ function animate(conffeti, insertTime) {
 }
 
 function capitalize(str) {
-  return str[0].toUpperCase() + str.substring(1, str.length);
+  return str
+    .split(" ")
+    .map((str) => str[0].toUpperCase() + str.substring(1, str.length))
+    .join(" ");
 }
