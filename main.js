@@ -21,7 +21,7 @@ function setup() {
   let text = document.querySelector(".happy-bday");
   let title = document.querySelector("title");
   text.innerHTML = location.href.split("#")[1]
-    ? `Parabéns<br/>${location.href.split("#")[1]}!`
+    ? `Parabéns<br/>${location.href.split("#")[1].replace("%20", " ")}!`
     : "Parabéns!";
   title.innerHTML = location.href.split("#")[1]
     ? `Feliz Aniversário, ${capitalize(location.href.split("#")[1])}!`
@@ -33,7 +33,7 @@ function setup() {
     opacity: 0,
     scale: 0,
     duration: 5,
-    ease: "back"
+    ease: "back",
   });
   minDuration = 8;
   for (let i = 0; i < 40; i++) {
@@ -74,7 +74,7 @@ function animate(conffeti, insertTime) {
       perspective: factor * 400 + 1,
       width: factor * (maxWidth - minWidth) + minWidth,
       height: factor * (maxHeight - minHeight) + minHeight,
-      zIndex: factor * 30
+      zIndex: factor * 30,
     },
     {
       y: window.innerHeight + 20,
@@ -82,7 +82,7 @@ function animate(conffeti, insertTime) {
       rotateX: factor * (maxRotationX - minRotationX) + minRotationX,
       duration: (1 - factor) * (maxDuration - minDuration) + minDuration,
       ease: "linear",
-      onComplete: () => conffeti.remove()
+      onComplete: () => conffeti.remove(),
     },
     insertTime
   );
