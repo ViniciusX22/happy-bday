@@ -37,13 +37,27 @@ function setup() {
     duration: 5,
     ease: "back",
   });
+  claps
+    .play()
+    .then(play)
+    .catch(() => {
+      let playButton = document.querySelector("#play");
+      playButton.addEventListener("click", () => {
+        playButton.style.display = "none";
+        claps.play();
+        play();
+      });
+      playButton.style.display = "block";
+    });
+}
+
+function play() {
   minDuration = 8;
   for (let i = 0; i < 40; i++) {
     createConffeti(i * minInterval);
   }
   minDuration = 4;
   timeline.play();
-  claps.play();
   tick();
 }
 

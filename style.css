@@ -30,3 +30,26 @@ body {
   z-index: 15;
   text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
 }
+
+#play {
+  display: none;
+  margin: auto;
+  position: relative;
+  top: 40%;
+  background-color: transparent;
+  border: none;
+  font-family: "Amatic SC", cursive;
+  font-size: 3rem;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+  cursor: pointer;
+}
+
+#play:active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#play:focus,
+#play:active {
+  border: none;
+}
